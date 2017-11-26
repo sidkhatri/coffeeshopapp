@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
-
 /*
  * author: Siddique Khatri
  *
@@ -22,7 +19,10 @@ public class HomeController {
 	@RequestMapping(value = "/submitform", method = RequestMethod.POST)
 	public String submitForm(Model model, @RequestParam("firstName") String firstName,
 			@RequestParam("lastName") String lastName, @RequestParam("email") String email,
-			@RequestParam("phoneNumber") String phonenumber, @RequestParam("password") String password) {
+			@RequestParam("phoneNumber") String phonenumber, @RequestParam("password") String password,
+			@RequestParam("confirmpassword") String confirmpassword, @RequestParam("state") String state,
+			@RequestParam("city") String city, @RequestParam("zip") String zip,
+			@RequestParam("coffeetype") String coffeetype) {
 
 		model.addAttribute("addDataToPage", firstName);
 		return "newPage";
